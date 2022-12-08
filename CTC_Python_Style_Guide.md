@@ -1,51 +1,23 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
 
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
+-->
 
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">project_title</h3>
-
+<h1 align="center">CTC Python Style Guide</h1>
   <p align="center">
-    project_description
+    A set of code style and formatting guidelines for python projects created by the CTC R&D team.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    Includes pythonic best practices, idioms, conventions, structure, and symbology. 
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
 
@@ -55,38 +27,152 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#zen-of-python">Zen of Python</a></li>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#best-practices">Best Practices</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#explicit-code">Explicit code</a></li>
+        <li><a href="#one-statement-per-line">One statement per line</a></li>
+        <li>
+          <a href="#function-arguments">Function Arguments</a>
+          <ul>
+            <li><a href="#positional-arguments">Positional arguments</a></li>
+            <li><a href="#keyword-arguments">Keyword arguments</a></li>
+            <li><a href="#arbitrary-argument-list">Arbitrary argument list</a></li>
+            <li><a href="#arbitrary-keyword-argument-dictionary">Arbitrary keyword argument dictionary</a></li>
+          </ul>
+        </li>
+        <li><a href="#returning-values">Returning values</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#idiomatic-python">Idiomatic Python</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#unpacking">Unpacking</a></li>
+        <li><a href="#create-ignored-variable">Create an ignored variable</a></li>
+        <li>
+          <a href="#list-construction">List Construction</a>
+          <ul>
+            <li><a href="#create-length-n-list-of-same-thing">Create a length-N list of the same thing</a></li>
+            <li><a href="#create-length-n-list-of-lists">Create a length-N list of lists</a></li>
+            <li><a href="#create-string-from-list">Create a string from a list</a></li>
+          </ul>
+        </li>
+        <li><a href="#searching-for-item-in-collection">Searching for an item in a collection</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li>
+      <a href="#conventions">Conventions</a>
+      <ul>
+        <li><a href="#check-if-variable-equals-constant">Check if a variable equals a constant</a></li>
+        <li><a href="#access-dictionary-element">Access a Dictionary Element</a></li>
+        <li>
+          <a href="#list-usage">List Usage</a>
+          <ul>
+            <li><a href="#short-ways-to-manipulate-lists">Short ways to manipulate lists</a></li>
+            <li><a href="#filtering-list">Filtering a list</a></li>
+            <li><a href="#possible-side-effects-of-modifying-original-list">Possible side effects of modifying the original list</a></li>
+            <li><a href="#modifying-values-in-list">Modifying the values in a list</a></li>
+          </ul>
+        </li>
+        <li><a href="#read-from-file">Read from a file</a></li>
+        <li><a href="#line-continuations">Line continuations</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#pep-8">PEP 8</a>
+      <ul>
+        <li><a href="#personal-preference-deviations">Personal preference deviations</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#structure-and-formatting">Structure and Formatting</a>
+      <ul>
+        <li><a href="#code-map">Code map</a></li>
+        <li><a href="#we-are-all-responsible-users">We are all responsible users</a></li>
+        <li>
+          <a href="#symbology">Symbology</a>
+          <ul>
+            <li><a href="#PLACEHOLDER">PLACEHOLDER</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
+Zen of Python
+Best Practices
+  Explicit code
+  One statement per line
+  Function arguments
+    Positional arguments
+    Keyword arguments
+    Arbitrary argument list
+    Arbitrary keyword argument dictionary
+  Returning values
+Idiomatic Python - Writing Pythonic code
+  Unpacking
+  Create an ignored variable
+  List construction
+    Create a length-N list of the same thing
+    Create a length-N list of lists
+    Create a string from a list
+  Searching for an item in a collection
+Conventions
+  Check if a variable equals a constant
+  Access a Dictionary Element
+  List Usage
+    Short Ways to Manipulate Lists
+    Filtering a list
+    Possible side effects of modifying the original list
+    Modifying the values in a list
+  Read From a File
+  Line Continuations
+PEP 8
+  Personal preference deviations
+Structure and Formatting
+  Code Map
+  We are all responsible users
+  Symbology
+
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Zen of Python
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<div class="section" id="explicit-code">
+<h3>Explicit code<a class="headerlink" href="#explicit-code" title="Permalink to this headline">¶</a></h3>
+<p>While any kind of black magic is possible with Python, the
+most explicit and straightforward manner is preferred.</p>
+<p><strong>Bad</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_complex</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">args</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>Good</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">y</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In the good code above, x and y are explicitly received from
+the caller, and an explicit dictionary is returned. The developer
+using this function knows exactly what to do by reading the
+first and last lines, which is not the case with the bad example.</p>
+</div>
 
 
 
