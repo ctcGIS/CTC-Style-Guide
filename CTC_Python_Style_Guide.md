@@ -73,7 +73,7 @@
   </ol>
 </details>
 
-
+<!-- TABLE OF CONTENTS
 Zen of Python
 Best Practices
   Explicit code
@@ -108,6 +108,7 @@ Structure and Formatting
   Code Map
   We are all responsible users
   Symbology
+-->
 
 
 <!-- ZEN OF PYTHON -->
@@ -143,11 +144,10 @@ Structure and Formatting
 
 <!-- BEAUTIFUL IS BETTER THAN UGLY -->
 <details>
-  <summary>Beautiful is better than ugly</summary>
+  <summary>Beautiful is better than ugly</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   def LongCamelCaseFuncNameDoSomeStuff(arg1, arg2, arg3, arg4, arg5):
     if (arg1 | arg2):
         return 1;
@@ -157,10 +157,10 @@ Structure and Formatting
         return arg3;
     localVar = map(lambda x,y,z,a,b,c: x+y+z+a+b+c, [1], [2], [3], [4], [5], [6]);
     return localVar
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   def define_time(length, velocity):
     return length / velocity if velocity else 0
 
@@ -172,17 +172,17 @@ Structure and Formatting
       )
       return time_array if sum(time_array) else []
   ```
+  <br>
 </details>
 
 
 
 <!-- EXPLICIT IS BETTER THAN IMPLICIT -->
 <details>
-  <summary>Explicit is better than implicit</summary>
+  <summary>Explicit is better than implicit</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   def main_function_of_program(argument_first, argument_second):
     result_first = argument_first + argument_second
     results_in_general = []
@@ -199,10 +199,10 @@ Structure and Formatting
     for value in results_in_general:
         sum_of_results += value
     return sum_of_results
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   def get_sum_of_values_in_two_arrays(array_a, array_b):
     return sum(array_a) + sum(array_b)
 
@@ -226,17 +226,17 @@ Structure and Formatting
       strings_digits_sum("abc1", "def22")  # 5
       strings_digits_sum("abc", "abc")  # 0
   ```
+  <br>
 </details>
 
 
 
 <!-- SIMPLE IS BETTER THAN COMPLEX -->
 <details>
-  <summary>Simple is better than complex</summary>
+  <summary>Simple is better than complex</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   def define_how_many_letters_are_digits(string):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     digits = "0123456789"
@@ -251,10 +251,10 @@ Structure and Formatting
             if not char_is_letter:
                 count_of_digits += 1
     return count_of_digits
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   # example 1 via comprehension
   def define_how_many_letters_are_digits_1(string):
       return len([1 for char in string if char.isdigit()])
@@ -267,17 +267,17 @@ Structure and Formatting
               count_of_digits += 1
       return count_of_digits
   ```
+  <br>
 </details>
 
 
 
 <!-- COMPLEX IS BETTER THAN COMPLICATED -->
 <details>
-  <summary>Complex is better than complicated</summary>
+  <summary>Complex is better than complicated</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   def dot_product(list_a, list_b):
     list_of_products = []
     for a, b in zip(list_a, list_b):
@@ -286,24 +286,24 @@ Structure and Formatting
     for product in list_of_products:
         sum_of_list += product
     return sum_of_list
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   def dot_product(list_a, list_b):
     return sum(map(lambda a, b: a*b, list_a, list_b))
   ```
+  <br>
 </details>
 
 
 
 <!-- FLAT IS BETTER THAN NESTED -->
 <details>
-  <summary>Flat is better than nested</summary>
+  <summary>Flat is better than nested</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   a = 10
   b = 5
   c = 'A bird nest'
@@ -312,10 +312,10 @@ Structure and Formatting
           print('string c is', c)
   else:
       print('try again')
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   a = 10
   b = 5
   c = 'A bird nest'
@@ -324,17 +324,17 @@ Structure and Formatting
   else:
       print('try again')
   ```
+  <br>
 </details>
 
 
 
 <!-- SPARSE IS BETTER THAN DENSE -->
 <details>
-  <summary>Sparse is better than dense</summary>
+  <summary>Sparse is better than dense</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   # first example is bad
   def print_sum_of_positive_int_numbers_in_mixed_list(array):
       numbers = [value for value in array if isinstance(value, int)]
@@ -347,10 +347,10 @@ Structure and Formatting
             sum([value for value in 
                  [value for value in array if isinstance(value, int)]
                  if value > 0]))
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   def get_integers_from_list(array):
     return [value for value in array if isinstance(value, int)]
 
@@ -369,28 +369,28 @@ Structure and Formatting
       sum_of_values = get_sum_of_array_values(positive)
       print_information(sum_of_values)
   ```
+  <br>
 </details>
 
 
 
 <!-- READABILITY COUNTS -->
 <details>
-  <summary>Readability counts</summary>
+  <summary>Readability counts</summary><br>
+
+  > Readability = explicit naming + simple solutions + sparse structure
+  <p><strong>Bad</strong></p>
 
   ```python
-  """ Readability = explicit naming + simple solutions + sparse structure """
-
-   Bad
-  ‾‾‾‾‾
   VarA = 10
   elemedf_fd_dict_A = { "a":  "hello", "v": 2
   ,"c": 1}
   elemedf_fd_dict_A[VarA] = \
   "elemet!"
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   char, index = "C", 3
   char_indices_dict = {
       "A": 1,
@@ -399,6 +399,7 @@ Structure and Formatting
       char: index
   }
   ```
+  <br>
 </details>
 
 
@@ -407,22 +408,23 @@ Structure and Formatting
      ALTHOUGH PRACTICALITY BEATS PURITY -->
 <details>
   <summary>Special cases aren't special enough to break the rules<br />
-    &emsp;Although practicality beats purity</summary>
+    &emsp;Although practicality beats purity</summary><br>
+  <p><strong>Special cases aren't special enough to break the rules.</strong></p>
 
-  ```python
-  """ Special cases aren't special enough to break the rules """
-
-  # Making your code readable for other developers is a core tenant of Python.
-  # Adhering to these 'best practices' is the safest way to accomplish this.
-  # Especially in the case of large projects or shared code such as libraries and modules.
-
-
-  """ Although practicality beats purity """
-
-  # Unsurprisingly, all rules have exceptions. Python Zen is not ironclad.
-  # A method that deviates from established standards can still be fine if it is practical and readable.
-  # Your code is your own responsibility, but keep the community in mind.
   ```
+    Making your code readable for other developers is a core tenant of Python.
+    Adhering to these 'best practices' is the safest way to accomplish this.
+    Especially in the case of large projects or shared code such as libraries and modules.
+  ```
+  <br>
+  <p><strong>Although practicality beats purity.</strong></p>
+
+  ```
+    Unsurprisingly, all rules have exceptions. Python Zen is not ironclad.
+    A method that deviates from established standards can still be fine if it is practical and readable.
+    Your code is your own responsibility, but keep the community in mind.
+  ```
+  <br>
 </details>
 
 
@@ -431,13 +433,11 @@ Structure and Formatting
      UNLESS EXPLICITLY SILENCED -->
 <details>
   <summary>Errors should never pass silently<br />
-    &emsp;Unless explicitly silenced</summary>
+    &emsp;Unless explicitly silenced</summary><br>
+  <p><strong>Errors should never pass silently.</strong></p>
+  <p><strong>Bad</strong></p>
 
   ```python
-  """ Errors should never pass silently """
-  
-   Bad
-  ‾‾‾‾‾
   def division_function(a, b):
     try:
         return a / b
@@ -445,18 +445,20 @@ Structure and Formatting
         pass
     finally:
         return 0
+  ```
+  <p><strong>Good</strong></p>
 
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   def division_function(a, b):
     try:
         return a / b
     except ZeroDivisionError as error:
         raise error
+  ```
 
+  <br><p><strong>Unless explicitly silenced.</strong></p>
 
-  """ Unless explicitly silenced """
-  
+  ```python
   def division_function(a, b):
     result = 0
     try:
@@ -475,26 +477,26 @@ Structure and Formatting
       else:
           print("Division result: {0}".format())
   ```
+  <br>
 </details>
 
 
 
 <!-- IN THE FACE OF AMBIGUITY, REFUSE THE TEMPTATION TO GUESS -->
 <details>
-  <summary>In the face of ambiguity, refuse the temptation to guess</summary>
+  <summary>In the face of ambiguity, refuse the temptation to guess</summary><br>
+  <p><strong>Bad</strong></p>
 
   ```python
-   Bad
-  ‾‾‾‾‾
   def huge_function(arg1, arg2):  # where is a function description ?
     component_1 = function_huge_2(arg1)  # you skip to debug it
     component_2 = function_huge_3(arg2)  # you skip to debug it
     component_result = sqrt(component_1+component_2)
     return component_result + 1  # where is an explanation ?
+  ```
+  <p><strong>Good</strong></p>
 
-
-   Good 
-  ‾‾‾‾‾‾
+  ```python
   def my_custom_formula(arg1, arg2):
     """
     Custom function to calculate how ... <explanation>
@@ -510,6 +512,7 @@ Structure and Formatting
     component_result = sqrt(component_1+component_2)
     return component_result + 1  # see method docstring
   ```
+  <br>
 </details>
 
 
@@ -517,18 +520,16 @@ Structure and Formatting
 <!-- THERE SHOULD BE ONE-- AND PREFERABLY ONLY ONE --OBVIOUS WAY TO DO IT
      ALTHOUGH THAT WAY MAY NOT BE OBVIOUS AT FIRST UNLESS YOU'RE DUTCH -->
 <details>
-  <summary>There should be one-- and preferably only one --obvious way to do it<br />
+  <summary>There should be one-- and preferably only one --obvious way to do it<br>
     &emsp;Although that way may not be obvious at first unless you're Dutch</summary>
-  <br />
+  <br>
   <blockquote>
     “When you first start off trying to solve a problem, the first solutions you come up with are very complex, and most people stop there. But if you keep going, and live with the problem and peel more layers of the onion off, you can often times arrive at some very elegant and simple solutions.”<br>
     — Steve Jobs
   </blockquote>
-  <br />
+  <p><strong>There should be one-- and preferably only one --obvious way to do it.</strong></p>
 
   ```python
-  """ There should be one-- and preferably only one --obvious way to do it """
-  
   # Create a list in Python
   # Fairly simple
   my_list = [1, 2, 3, 4, 5]
@@ -546,15 +547,16 @@ Structure and Formatting
       return list(args)  # without list() it's a tuple
 
   print(create_list(1, “dog”, 2, False, “apple”, 0))  # [1, “dog”, 2, False, “apple”, 0]
-
-
-  """ Although that way may not be obvious at first unless you're Dutch """
-  
-  # An easter egg reference to Python's creator, Guido van Rossum.
-  # All Pythonic solutions are obvious to the BDFL of course.
-  # But the general idea is to always think twice.
-  # The proper solution may not be the first one.
   ```
+  <p><strong>Although that way may not be obvious at first unless you're Dutch.</strong></p>
+
+  ```
+    An easter egg reference to Python's creator, Guido van Rossum.
+    All Pythonic solutions are obvious to the BDFL of course.
+    But the general idea is to always think twice.
+    The proper solution may not be the first one.
+  ```
+  <br>
 </details>
 
 
@@ -562,9 +564,9 @@ Structure and Formatting
 <!-- NOW IS BETTER THAN NEVER
      ALTHOUGH NEVER IS OFTEN BETTER THAN *RIGHT* NOW -->
 <details>
-  <summary>Now is better than never<br />
+  <summary>Now is better than never<br>
     &emsp;Although never is often better than <strong>right</strong> now</summary>
-  <br />
+  <br>
   <blockquote>
     “Always implement things when you actually need them, never when you just foresee that you need them.”<br>
     — Ron Jeffries
@@ -572,22 +574,21 @@ Structure and Formatting
     “It is hard for less experienced developers to appreciate how rarely architecting for future requirements/applications turns out net-positive.”<br>
     — John Carmack
   </blockquote>
-  <br />
+  <p><strong>Now is better than never.</strong></p>
 
-  ```python
-  """ Now is better than never """
-
-  # Pre-optimizing and planning only go so far.
-  # Implement and test your solutions as you have them.
-  # Errors may lead to more promising solutions if you know about them.
-
-
-  """ Although never is often better than *right* now """
-
-  # These two rules are intentionally contradictory.
-  # Apply the YAGNI (You Ain't Gonna Need It) principle.
-  # Avoid feature creep; don't add functionality before it's necessary.
   ```
+    Pre-optimizing and planning only go so far.
+    Implement and test your solutions as you have them.
+    Errors may lead to more promising solutions if you know about them.
+  ```
+  <p><strong>Although never is often better than <i>right</i> now.</strong></p>
+
+  ```
+    These two rules are intentionally contradictory.
+    Apply the YAGNI (You Ain't Gonna Need It) principle.
+    Avoid feature creep; don't add functionality before it's necessary.
+  ```
+  <br>
 </details>
 
 
@@ -597,6 +598,8 @@ Structure and Formatting
 <details>
   <summary>If the implementation is hard to explain, it's a bad idea<br />
     &emsp;If the implementation is easy to explain, it may be a good idea</summary>
+  <br>
+  <p><strong>If the implementation is hard to explain, it's a bad idea.</strong></p>
 
   ```python
   def hard():
@@ -607,8 +610,10 @@ Structure and Formatting
       for node in menagerie.childNodes:
           if node.childNodes[0].nodeValue== 'Cisco' and node.tagName == 'cat':
               return node
+  ```
+  <p><strong>If the implementation is easy to explain, it may be a good idea.</strong></p>
 
-
+  ```python
   def easy(maybe):
       import lxml
       menagerie = lxml.etree.fromstring(
@@ -617,6 +622,7 @@ Structure and Formatting
           if pet.text == 'Cisco':
               return pet
   ```
+  <br>
 </details>
 
 
@@ -624,6 +630,7 @@ Structure and Formatting
 <!-- NAMESPACES ARE ONE HONKING GREAT IDEA -- LET'S DO MORE OF THOSE -->
 <details>
   <summary>Namespaces are one honking great idea -- let's do more of those!</summary>
+  <br>
 
   ```python
   # A namespace is a mapping from names to objects.
@@ -638,26 +645,38 @@ Structure and Formatting
   >>> 9302240
   >>> 9302240
   ```
+  <br>
 </details>
 
 
-<br />
-Source: https://github.com/hblanks/zen-of-python-by-example
+### Sources
+https://github.com/hblanks/zen-of-python-by-example
 <br />
 Author:	Hunter Blanks
 <br />
 Date:	June 15, 2013
-<br />
+<br /><br />
 https://bond-kirill-alexandrovich.medium.com/python-zen-in-practice-70dc8d7c4603
-Kirill Bondarenko
-Oct 14, 2020
-
+<br />
+Author: Kirill Bondarenko
+<br />
+Date: Oct 14, 2020
+<br /><br />
 https://towardsdatascience.com/the-zen-of-python-a-guide-to-pythons-design-principles-93f3f76d088a
-Vishal Sharma
-Jun 3, 2020
+<br />
+Author: Vishal Sharma
+<br />
+Date: Jun 3, 2020
+<br /><br />
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ---
+
+
+  ```python
+
+  ```
+
 
 <!-- BEST PRACTICES -->
 ## Best Practices
@@ -667,15 +686,19 @@ Jun 3, 2020
 <p>While any kind of black magic is possible with Python, the
 most explicit and straightforward manner is preferred.</p>
 <p><strong>Bad</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_complex</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">args</span>
-    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+
+  ```python
+  def make_complex(*args):
+      x, y = args
+      return dict(**locals())
+  ```
 </div>
 <p><strong>Good</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">y</span><span class="p">}</span>
-</pre></div>
+
+  ```python
+  def make_complex(x, y):
+      return {'x': x, 'y': y}
+  ```
 </div>
 <p>In the good code above, x and y are explicitly received from
 the caller, and an explicit dictionary is returned. The developer
@@ -843,27 +866,100 @@ is needed.</p>
 ## Idiomatic Python
 ### Writing Pythonic code
 
-### Unpacking
+<div class="section" id="unpacking">
+<span id="unpacking-ref"></span><h3>Unpacking<a class="headerlink" href="#unpacking" title="Permalink to this headline">¶</a></h3>
+<p>If you know the length of a list or tuple, you can assign names to its
+elements with unpacking. For example, since <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> will provide
+a tuple of two elements for each item in list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">some_list</span><span class="p">):</span>
+    <span class="c1"># do something with index and item</span>
+</pre></div>
+</div>
+<p>You can use this to swap variables as well:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</pre></div>
+</div>
+<p>Nested unpacking works too:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In Python 3, a new method of extended unpacking was introduced by
+<span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3132"><strong>PEP 3132</strong></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="c1"># a = 1, rest = [2, 3]</span>
+<span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">middle</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="c1"># a = 1, middle = [2, 3], c = 4</span>
+</pre></div>
+</div>
+</div>
 
 <br />
 
-### Create an ignored variable
+<div class="section" id="create-an-ignored-variable">
+<h3>Create an ignored variable<a class="headerlink" href="#create-an-ignored-variable" title="Permalink to this headline">¶</a></h3>
+<p>If you need to assign something (for instance, in <a class="reference internal" href="#unpacking-ref"><span class="std std-ref">Unpacking</span></a>) but
+will not need that variable, use <code class="docutils literal notranslate"><span class="pre">__</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'foobar.txt'</span>
+<span class="n">basename</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Many Python style guides recommend the use of a single underscore “<code class="docutils literal notranslate"><span class="pre">_</span></code>”
+for throwaway variables rather than the double underscore “<code class="docutils literal notranslate"><span class="pre">__</span></code>”
+recommended here. The issue is that “<code class="docutils literal notranslate"><span class="pre">_</span></code>” is commonly used as an alias
+for the <a class="reference external" href="https://docs.python.org/3/library/gettext.html#gettext.gettext" title="(in Python v3.11)"><code class="xref py py-func docutils literal notranslate"><span class="pre">gettext()</span></code></a> function, and is also used at the
+interactive prompt to hold the value of the last operation. Using a
+double underscore instead is just as clear and almost as convenient,
+and eliminates the risk of accidentally interfering with either of
+these other use cases.</p>
+</div>
+</div>
 
 <br />
 
-### List construction
+<div class="section" id="list-construction">
+<h3>List Construction<a class="headerlink" href="#list-construction" title="Permalink to this headline">¶</a></h3>
 
-<br />
+#
 
-#### Create a length-N list of the same thing
+<div class="section" id="create-a-length-n-list-of-lists">
+<h4>Create a length-N list of lists<a class="headerlink" href="#create-a-length-n-list-of-lists" title="Permalink to this headline">¶</a></h4>
+<p>Because lists are mutable, the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator (as above) will create a list
+of N references to the <cite>same</cite> list, which is not likely what you want.
+Instead, use a list comprehension:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">four_lists</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
 
-<br />
+#
 
-#### Create a length-N list of lists
+<div class="section" id="create-a-length-n-list-of-lists">
+<h4>Create a length-N list of lists<a class="headerlink" href="#create-a-length-n-list-of-lists" title="Permalink to this headline">¶</a></h4>
+<p>Because lists are mutable, the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator (as above) will create a list
+of N references to the <cite>same</cite> list, which is not likely what you want.
+Instead, use a list comprehension:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">four_lists</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
 
-<br />
+#
 
-#### Create a string from a list
+<div class="section" id="create-a-string-from-a-list">
+<h4>Create a string from a list<a class="headerlink" href="#create-a-string-from-a-list" title="Permalink to this headline">¶</a></h4>
+<p>A common idiom for creating strings is to use <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join" title="(in Python v3.11)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.join()</span></code></a> on an empty
+string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'s'</span><span class="p">,</span> <span class="s1">'p'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">]</span>
+<span class="n">word</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will set the value of the variable <em>word</em> to ‘spam’. This idiom can be
+applied to lists and tuples.</p>
+</div>
+
+</div>
 
 <br />
 
