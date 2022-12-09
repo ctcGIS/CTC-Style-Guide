@@ -670,6 +670,7 @@ Date: Jun 3, 2020
 <br /><br />
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
 ---
 
 
@@ -860,6 +861,7 @@ is needed.</p>
 </div>
 
 
+---
 
 
 <!-- IDIOMATIC PYTHON -->
@@ -958,52 +960,328 @@ string.</p>
 <p>This will set the value of the variable <em>word</em> to ‘spam’. This idiom can be
 applied to lists and tuples.</p>
 </div>
-
 </div>
 
 <br />
 
-### Searching for an item in a collection
+<div class="section" id="searching-for-an-item-in-a-collection">
+<h3>Searching for an item in a collection<a class="headerlink" href="#searching-for-an-item-in-a-collection" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes we need to search through a collection of things. Let’s look at two
+options: lists and sets.</p>
+<p>Take the following code for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">'s'</span><span class="p">,</span> <span class="s1">'p'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">])</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'s'</span><span class="p">,</span> <span class="s1">'p'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">lookup_set</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">'s'</span> <span class="ow">in</span> <span class="n">s</span>
+
+<span class="k">def</span> <span class="nf">lookup_list</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">'s'</span> <span class="ow">in</span> <span class="n">l</span>
+</pre></div>
+</div>
+<p>Even though both functions look identical, because <em>lookup_set</em> is utilizing
+the fact that sets in Python are hashtables, the lookup performance
+between the two is very different. To determine whether an item is in a list,
+Python will have to go through each item until it finds a matching item.
+This is time consuming, especially for long lists. In a set, on the other
+hand, the hash of the item will tell Python where in the set to look for
+a matching item. As a result, the search can be done quickly, even if the
+set is large. Searching in dictionaries works the same way. For
+more information see this
+<a class="reference external" href="https://stackoverflow.com/questions/513882/python-list-vs-dict-for-look-up-table">StackOverflow</a>
+page. For detailed information on the amount of time various common operations
+take on each of these data structures, see
+<a class="reference external" href="https://wiki.python.org/moin/TimeComplexity?">this page</a>.</p>
+<p>Because of these differences in performance, it is often a good idea to use
+sets or dictionaries instead of lists in cases where:</p>
+<ul class="simple">
+<li>The collection will contain a large number of items</li>
+<li>You will be repeatedly searching for items in the collection</li>
+<li>You do not have duplicate items.</li>
+</ul>
+<p>For small collections, or collections which you will not frequently be
+searching through, the additional time and memory required to set up the
+hashtable will often be greater than the time saved by the improved search
+speed.</p>
+</div>
+
+<br />
 
 
+---
 
 
 <!-- CONVENTIONS -->
 ## Conventions
 
-### Check if a variable equals a constant
+<div class="section" id="check-if-a-variable-equals-a-constant">
+<h3>Check if a variable equals a constant<a class="headerlink" href="#check-if-a-variable-equals-a-constant" title="Permalink to this headline">¶</a></h3>
+<p>You don’t need to explicitly compare a value to True, or None, or 0 – you can
+just add it to the if statement. See <a class="reference external" href="http://docs.python.org/library/stdtypes.html#truth-value-testing">Truth Value Testing</a> for a
+list of what is considered false.</p>
+<p><strong>Bad</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'True!'</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'attr is None!'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just check the value</span>
+<span class="k">if</span> <span class="n">attr</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'attr is truthy!'</span><span class="p">)</span>
+
+<span class="c1"># or check for the opposite</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'attr is falsey!'</span><span class="p">)</span>
+
+<span class="c1"># or, since None is considered false, explicitly check for it</span>
+<span class="k">if</span> <span class="n">attr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'attr is None!'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 
 <br />
 
-### Access a Dictionary Element
+<div class="section" id="access-a-dictionary-element">
+<h3>Access a Dictionary Element<a class="headerlink" href="#access-a-dictionary-element" title="Permalink to this headline">¶</a></h3>
+<p>Don’t use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">dict.has_key()</span></code> method. Instead, use <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">d</span></code> syntax,
+or pass a default argument to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict.get" title="(in Python v3.11)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dict.get()</span></code></a>.</p>
+<p><strong>Bad</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'hello'</span><span class="p">:</span> <span class="s1">'world'</span><span class="p">}</span>
+<span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">'hello'</span><span class="p">])</span>    <span class="c1"># prints 'world'</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'default_value'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'hello'</span><span class="p">:</span> <span class="s1">'world'</span><span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'default_value'</span><span class="p">))</span> <span class="c1"># prints 'world'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'thingy'</span><span class="p">,</span> <span class="s1">'default_value'</span><span class="p">))</span> <span class="c1"># prints 'default_value'</span>
+
+<span class="c1"># Or:</span>
+<span class="k">if</span> <span class="s1">'hello'</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">'hello'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
 
 <br />
 
-### List Usage
+<div class="section" id="list-usage">
+<h3>List Usage<a class="headerlink" href="#list-usage" title="Permalink to this headline">¶</a></h3>
+
+#
+
+<div class="section" id="short-ways-to-manipulate-lists">
+<h4>Short Ways to Manipulate Lists<a class="headerlink" href="#short-ways-to-manipulate-lists" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">List comprehensions</a>
+provides a powerful, concise way to work with lists.</p>
+<p><a class="reference external" href="http://docs.python.org/tutorial/classes.html#generator-expressions">Generator expressions</a>
+follows almost the same syntax as list comprehensions but return a generator
+instead of a list.</p>
+<p>Creating a new list requires more work and uses more memory. If you are just going
+to loop through the new list, prefer using an iterator instead.</p>
+<p><strong>Bad</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># needlessly allocates a list of all (gpa, name) entires in memory</span>
+<span class="n">valedictorian</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([(</span><span class="n">student</span><span class="o">.</span><span class="n">gpa</span><span class="p">,</span> <span class="n">student</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">graduates</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valedictorian</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="n">student</span><span class="o">.</span><span class="n">gpa</span><span class="p">,</span> <span class="n">student</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">graduates</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use list comprehensions when you really need to create a second list, for
+example if you need to use the result multiple times.</p>
+<p>If your logic is too complicated for a short list comprehension or generator
+expression, consider using a generator function instead of returning a list.</p>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_batches</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    &gt;&gt;&gt; list(make_batches([1, 2, 3, 4, 5], batch_size=3))</span>
+<span class="sd">    [[1, 2, 3], [4, 5]]</span>
+<span class="sd">    """</span>
+    <span class="n">current_batch</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">current_batch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_batch</span><span class="p">)</span> <span class="o">==</span> <span class="n">batch_size</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">current_batch</span>
+            <span class="n">current_batch</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">yield</span> <span class="n">current_batch</span>
+</pre></div>
+</div>
+<p>Never use a list comprehension just for its side effects.</p>
+<p><strong>Bad</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+#
+
+<div class="section" id="filtering-a-list">
+<h4>Filtering a list<a class="headerlink" href="#filtering-a-list" title="Permalink to this headline">¶</a></h4>
+<p><strong>Bad</strong>:</p>
+<p>Never remove items from a list while you are iterating through it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter elements greater than 4</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Don’t make multiple passes through the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<p>Use a list comprehension or generator expression.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># comprehensions create a new list object</span>
+<span class="n">filtered_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="c1"># generators don't create another list</span>
+<span class="n">filtered_values</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+
+</div>
+
+#
+
+<div class="section" id="possible-side-effects-of-modifying-the-original-list">
+<h4>Possible side effects of modifying the original list<a class="headerlink" href="#possible-side-effects-of-modifying-the-original-list" title="Permalink to this headline">¶</a></h4>
+<p>Modifying the original list can be risky if there are other variables referencing it. But you can use <em>slice assignment</em> if you really want to do that.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace the contents of the original list</span>
+<span class="n">sequence</span><span class="p">[::]</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+
+#
+
+<div class="section" id="modifying-the-values-in-a-list">
+<h4>Modifying the values in a list<a class="headerlink" href="#modifying-the-values-in-a-list" title="Permalink to this headline">¶</a></h4>
+<p><strong>Bad</strong>:</p>
+<p>Remember that assignment never creates a new object. If two or more variables refer to the same list, changing one of them changes them all.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add three to all list members.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>                     <span class="c1"># a and b refer to the same list object</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">3</span>             <span class="c1"># b[i] also changes</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<p>It’s safer to create a new list object and leave the original alone.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+
+<span class="c1"># assign the variable "a" to a new list without changing "b"</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use <a class="reference external" href="https://docs.python.org/3/library/functions.html#enumerate" title="(in Python v3.11)"><code class="xref py py-func docutils literal notranslate"><span class="pre">enumerate()</span></code></a> keep a count of your place in the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+<span class="c1"># prints</span>
+<span class="c1"># 0 3</span>
+<span class="c1"># 1 4</span>
+<span class="c1"># 2 5</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://docs.python.org/3/library/functions.html#enumerate" title="(in Python v3.11)"><code class="xref py py-func docutils literal notranslate"><span class="pre">enumerate()</span></code></a> function has better readability than handling a
+counter manually. Moreover, it is better optimized for iterators.</p>
+</div>
+</div>
 
 <br />
 
-#### Short Ways to Manipulate Lists
+<div class="section" id="line-continuations">
+<h3>Line Continuations<a class="headerlink" href="#line-continuations" title="Permalink to this headline">¶</a></h3>
+<p>When a logical line of code is longer than the accepted limit, you need to
+split it over multiple physical lines. The Python interpreter will join
+consecutive lines if the last character of the line is a backslash. This is
+helpful in some cases, but should usually be avoided because of its fragility:
+a white space added to the end of the line, after the backslash, will break the
+code and may have unexpected results.</p>
+<p>A better solution is to use parentheses around your elements. Left with an
+unclosed parenthesis on an end-of-line, the Python interpreter will join the
+next line until the parentheses are closed. The same behavior holds for curly
+and square braces.</p>
+<p><strong>Bad</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_very_big_string</span> <span class="o">=</span> <span class="s2">"""For a long time I used to go to bed early. Sometimes, </span><span class="se">\</span>
+<span class="s2">    when I had put out my candle, my eyes would close so quickly that I had not even </span><span class="se">\</span>
+<span class="s2">    time to say “I’m going to sleep.”"""</span>
+
+<span class="kn">from</span> <span class="nn">some.deep.module.inside.a.module</span> <span class="kn">import</span> <span class="n">a_nice_function</span><span class="p">,</span> <span class="n">another_nice_function</span><span class="p">,</span> \
+    <span class="n">yet_another_nice_function</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_very_big_string</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"For a long time I used to go to bed early. Sometimes, "</span>
+    <span class="s2">"when I had put out my candle, my eyes would close so quickly "</span>
+    <span class="s2">"that I had not even time to say “I’m going to sleep.”"</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">some.deep.module.inside.a.module</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">a_nice_function</span><span class="p">,</span> <span class="n">another_nice_function</span><span class="p">,</span> <span class="n">yet_another_nice_function</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, more often than not, having to split a long logical line is a sign that
+you are trying to do too many things at the same time, which may hinder
+readability.</p>
+</div>
 
 <br />
 
-#### Filtering a list
+<div class="section" id="line-continuations">
+<h3>Line Continuations<a class="headerlink" href="#line-continuations" title="Permalink to this headline">¶</a></h3>
+<p>When a logical line of code is longer than the accepted limit, you need to
+split it over multiple physical lines. The Python interpreter will join
+consecutive lines if the last character of the line is a backslash. This is
+helpful in some cases, but should usually be avoided because of its fragility:
+a white space added to the end of the line, after the backslash, will break the
+code and may have unexpected results.</p>
+<p>A better solution is to use parentheses around your elements. Left with an
+unclosed parenthesis on an end-of-line, the Python interpreter will join the
+next line until the parentheses are closed. The same behavior holds for curly
+and square braces.</p>
+<p><strong>Bad</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_very_big_string</span> <span class="o">=</span> <span class="s2">"""For a long time I used to go to bed early. Sometimes, </span><span class="se">\</span>
+<span class="s2">    when I had put out my candle, my eyes would close so quickly that I had not even </span><span class="se">\</span>
+<span class="s2">    time to say “I’m going to sleep.”"""</span>
 
-<br />
+<span class="kn">from</span> <span class="nn">some.deep.module.inside.a.module</span> <span class="kn">import</span> <span class="n">a_nice_function</span><span class="p">,</span> <span class="n">another_nice_function</span><span class="p">,</span> \
+    <span class="n">yet_another_nice_function</span>
+</pre></div>
+</div>
+<p><strong>Good</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_very_big_string</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"For a long time I used to go to bed early. Sometimes, "</span>
+    <span class="s2">"when I had put out my candle, my eyes would close so quickly "</span>
+    <span class="s2">"that I had not even time to say “I’m going to sleep.”"</span>
+<span class="p">)</span>
 
-#### Possible side effects of modifying the original list
-
-<br />
-
-#### Modifying the values in a list
-
-<br />
-
-### Read From a File
-
-<br />
-
-### Line Continuations
+<span class="kn">from</span> <span class="nn">some.deep.module.inside.a.module</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">a_nice_function</span><span class="p">,</span> <span class="n">another_nice_function</span><span class="p">,</span> <span class="n">yet_another_nice_function</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, more often than not, having to split a long logical line is a sign that
+you are trying to do too many things at the same time, which may hinder
+readability.</p>
+</div>
 
 
 
