@@ -708,21 +708,16 @@ Structure and Formatting
   ```
   <br>
 </details>
-<br/><br/>
+
 
 ### Sources
-[Zen of Python by Example](https://github.com/hblanks/zen-of-python-by-example)
-<br/>
-Hunter Blanks - June 15, 2013
-<br/><br/>
-[Python Zen in Practice](https://bond-kirill-alexandrovich.medium.com/python-zen-in-practice-70dc8d7c4603)
-<br/>
-Kirill Bondarenko - Date: Oct 14, 2020
-<br/><br/>
-[A Guide to Python's Design Principles](https://towardsdatascience.com/the-zen-of-python-a-guide-to-pythons-design-principles-93f3f76d088a)
-<br/>
-Vishal Sharma - Date: Jun 3, 2020
-<br/><br/>
+[Zen of Python by Example](https://github.com/hblanks/zen-of-python-by-example) - Hunter Blanks - June 15, 2013
+<br>
+[Python Zen in Practice](https://bond-kirill-alexandrovich.medium.com/python-zen-in-practice-70dc8d7c4603) - Kirill Bondarenko - October 14, 2020
+<br>
+[A Guide to Python's Design Principles](https://towardsdatascience.com/the-zen-of-python-a-guide-to-pythons-design-principles-93f3f76d088a) - Vishal Sharma - June 3, 2020
+<br>
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -767,8 +762,8 @@ Vishal Sharma - Date: Jun 3, 2020
   using this function knows exactly what to do by reading the
   first and last lines, which is not the case with the bad example.</p>
   </div>
+  <br>
 </details>
-<br>
 
 
 <!---------------------------------------------------------------------->
@@ -809,8 +804,8 @@ Vishal Sharma - Date: Jun 3, 2020
       # do something
   ```
   </div>
+  <br>
 </details>
-<br>
 
 
 <!---------------------------------------------------------------------->
@@ -856,8 +851,8 @@ Vishal Sharma - Date: Jun 3, 2020
     &bull; easy to change (adding a new keyword argument does not break other parts of the code)
   </p>
   </div>
+  <br>
 </details>
-<br>
 
 
 <!---------------------------------------------------------------------->
