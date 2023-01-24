@@ -618,7 +618,7 @@ Structure and Formatting
      ALTHOUGH NEVER IS OFTEN BETTER THAN *RIGHT* NOW -->
 <details>
   <summary>Now is better than never<br>
-    &emsp;Although never is often better than <strong>right</strong> now</summary>
+    &emsp;Although never is often better than <em>right</em> now</summary>
   <br>
   <blockquote>
     “Always implement things when you actually need them, never when you just foresee that you need them.”<br>
