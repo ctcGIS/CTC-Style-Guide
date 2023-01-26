@@ -4,7 +4,7 @@
 
 <!-- TITLE -->
 <br />
-<h1 align="center">SeeTeeSee Piethon Stile Gide</h1>
+<h1 align="center">CTC Python Style Guide</h1>
   <p align="center">
     A set of code style and formatting guidelines for python projects created by the CTC R&D team.
     <br>
