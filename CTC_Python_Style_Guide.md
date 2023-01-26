@@ -1,25 +1,24 @@
 <div id="top"></div>
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-[![Forks][forks-shield]][forks-url]
--->
 
 
 <!-- TITLE -->
 <br />
-<h1 align="center">CTC Python Style Guide</h1>
+<h1 align="center">SeeTeeSee Piethon Stile Gide</h1>
   <p align="center">
     A set of code style and formatting guidelines for python projects created by the CTC R&D team.
-    <br />
+    <br>
     Includes pythonic best practices, idioms, conventions, structure, and symbology. 
-    <br />
-    <br />
+    <br>
+    <br>
   </p>
 </div>
+
+
+
+<!--##################################################################-->
+
+<!--##################################################################-->
 
 
 
@@ -111,33 +110,42 @@ Structure and Formatting
 -->
 
 
+<!--##################################################################-->
+<!--##################################################################-->
+
+
 <!-- ZEN OF PYTHON -->
 <div class="section" id="zen-of-python">
-<h2>Zen of Python<a class="headerlink" href="#zen-of-python" title="Permalink to this headline">¶</a></h2>
-<p>Also known as <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0020"><strong>PEP 20</strong></a>, the guiding principles for Python’s design. Long time Pythoneer Tim Peters succinctly channels the BDFL Guido van Rossum’s guiding principles for Python’s design into 20 aphorisms, only 19 of which have been written down.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre>
-<span class="go">Beautiful is better than ugly.</span>
-<span class="go">Explicit is better than implicit.</span>
-<span class="go">Simple is better than complex.</span>
-<span class="go">Complex is better than complicated.</span>
-<span class="go">Flat is better than nested.</span>
-<span class="go">Sparse is better than dense.</span>
-<span class="go">Readability counts.</span>
-<span class="go">Special cases aren't special enough to break the rules.</span>
-<span class="go">Although practicality beats purity.</span>
-<span class="go">Errors should never pass silently.</span>
-<span class="go">Unless explicitly silenced.</span>
-<span class="go">In the face of ambiguity, refuse the temptation to guess.</span>
-<span class="go">There should be one-- and preferably only one --obvious way to do it.</span>
-<span class="go">Although that way may not be obvious at first unless you're Dutch.</span>
-<span class="go">Now is better than never.</span>
-<span class="go">Although never is often better than *right* now.</span>
-<span class="go">If the implementation is hard to explain, it's a bad idea.</span>
-<span class="go">If the implementation is easy to explain, it may be a good idea.</span>
-<span class="go">Namespaces are one honking great idea -- let's do more of those!</span>
-</pre></div>
+  <h2>Zen of Python<a class="headerlink" href="#zen-of-python" title="Permalink to this headline">¶</a></h2>
+
+  <p>Also known as <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0020"><strong>PEP 20</strong></a>, the guiding principles for Python’s design. Long time Pythoneer Tim Peters succinctly channels the BDFL Guido van Rossum’s guiding principles for Python’s design into 20 aphorisms, only 19 of which have been written down.</p>
+
+  <div class="highlight-pycon notranslate"><div class="highlight"><pre>
+  <span class="go">Beautiful is better than ugly.</span>
+  <span class="go">Explicit is better than implicit.</span>
+  <span class="go">Simple is better than complex.</span>
+  <span class="go">Complex is better than complicated.</span>
+  <span class="go">Flat is better than nested.</span>
+  <span class="go">Sparse is better than dense.</span>
+  <span class="go">Readability counts.</span>
+  <span class="go">Special cases aren't special enough to break the rules.</span>
+  <span class="go">Although practicality beats purity.</span>
+  <span class="go">Errors should never pass silently.</span>
+  <span class="go">Unless explicitly silenced.</span>
+  <span class="go">In the face of ambiguity, refuse the temptation to guess.</span>
+  <span class="go">There should be one-- and preferably only one --obvious way to do it.</span>
+  <span class="go">Although that way may not be obvious at first unless you're Dutch.</span>
+  <span class="go">Now is better than never.</span>
+  <span class="go">Although never is often better than *right* now.</span>
+  <span class="go">If the implementation is hard to explain, it's a bad idea.</span>
+  <span class="go">If the implementation is easy to explain, it may be a good idea.</span>
+  <span class="go">Namespaces are one honking great idea -- let's do more of those!</span>
+  </pre></div>
 </div>
 
+
+<!---------------------------------------------------------------------->
+<!---------------------------------------------------------------------->
 
 
 ### Examples
@@ -145,6 +153,7 @@ Structure and Formatting
 <!-- BEAUTIFUL IS BETTER THAN UGLY -->
 <details>
   <summary>Beautiful is better than ugly</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -158,6 +167,7 @@ Structure and Formatting
     localVar = map(lambda x,y,z,a,b,c: x+y+z+a+b+c, [1], [2], [3], [4], [5], [6]);
     return localVar
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -176,10 +186,13 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- EXPLICIT IS BETTER THAN IMPLICIT -->
 <details>
   <summary>Explicit is better than implicit</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -200,6 +213,7 @@ Structure and Formatting
         sum_of_results += value
     return sum_of_results
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -230,10 +244,13 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- SIMPLE IS BETTER THAN COMPLEX -->
 <details>
   <summary>Simple is better than complex</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -252,6 +269,7 @@ Structure and Formatting
                 count_of_digits += 1
     return count_of_digits
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -271,10 +289,13 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- COMPLEX IS BETTER THAN COMPLICATED -->
 <details>
   <summary>Complex is better than complicated</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -287,6 +308,7 @@ Structure and Formatting
         sum_of_list += product
     return sum_of_list
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -297,10 +319,13 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- FLAT IS BETTER THAN NESTED -->
 <details>
   <summary>Flat is better than nested</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -313,6 +338,7 @@ Structure and Formatting
   else:
       print('try again')
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -328,10 +354,13 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- SPARSE IS BETTER THAN DENSE -->
 <details>
   <summary>Sparse is better than dense</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -348,6 +377,7 @@ Structure and Formatting
                  [value for value in array if isinstance(value, int)]
                  if value > 0]))
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -373,12 +403,15 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- READABILITY COUNTS -->
 <details>
   <summary>Readability counts</summary><br>
 
   > Readability = explicit naming + simple solutions + sparse structure
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -388,6 +421,7 @@ Structure and Formatting
   elemedf_fd_dict_A[VarA] = \
   "elemet!"
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -403,12 +437,15 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- SPECIAL CASES AREN'T SPECIAL ENOUGH TO BREAK THE RULES
      ALTHOUGH PRACTICALITY BEATS PURITY -->
 <details>
   <summary>Special cases aren't special enough to break the rules<br />
     &emsp;Although practicality beats purity</summary><br>
+  
   <p><strong>Special cases aren't special enough to break the rules.</strong></p>
 
   ```
@@ -417,6 +454,7 @@ Structure and Formatting
     Especially in the case of large projects or shared code such as libraries and modules.
   ```
   <br>
+
   <p><strong>Although practicality beats purity.</strong></p>
 
   ```
@@ -428,13 +466,17 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- ERRORS SHOULD NEVER PASS SILENTLY
      UNLESS EXPLICITLY SILENCED -->
 <details>
   <summary>Errors should never pass silently<br />
     &emsp;Unless explicitly silenced</summary><br>
+  
   <p><strong>Errors should never pass silently.</strong></p>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -446,6 +488,7 @@ Structure and Formatting
     finally:
         return 0
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -481,10 +524,13 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- IN THE FACE OF AMBIGUITY, REFUSE THE TEMPTATION TO GUESS -->
 <details>
   <summary>In the face of ambiguity, refuse the temptation to guess</summary><br>
+  
   <p><strong>Bad</strong></p>
 
   ```python
@@ -494,6 +540,7 @@ Structure and Formatting
     component_result = sqrt(component_1+component_2)
     return component_result + 1  # where is an explanation ?
   ```
+
   <p><strong>Good</strong></p>
 
   ```python
@@ -516,6 +563,8 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- THERE SHOULD BE ONE-- AND PREFERABLY ONLY ONE --OBVIOUS WAY TO DO IT
      ALTHOUGH THAT WAY MAY NOT BE OBVIOUS AT FIRST UNLESS YOU'RE DUTCH -->
@@ -527,6 +576,7 @@ Structure and Formatting
     “When you first start off trying to solve a problem, the first solutions you come up with are very complex, and most people stop there. But if you keep going, and live with the problem and peel more layers of the onion off, you can often times arrive at some very elegant and simple solutions.”<br>
     — Steve Jobs
   </blockquote>
+  
   <p><strong>There should be one-- and preferably only one --obvious way to do it.</strong></p>
 
   ```python
@@ -548,6 +598,7 @@ Structure and Formatting
 
   print(create_list(1, “dog”, 2, False, “apple”, 0))  # [1, “dog”, 2, False, “apple”, 0]
   ```
+
   <p><strong>Although that way may not be obvious at first unless you're Dutch.</strong></p>
 
   ```
@@ -560,12 +611,14 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- NOW IS BETTER THAN NEVER
      ALTHOUGH NEVER IS OFTEN BETTER THAN *RIGHT* NOW -->
 <details>
   <summary>Now is better than never<br>
-    &emsp;Although never is often better than <strong>right</strong> now</summary>
+    &emsp;Although never is often better than <em>right</em> now</summary>
   <br>
   <blockquote>
     “Always implement things when you actually need them, never when you just foresee that you need them.”<br>
@@ -574,6 +627,7 @@ Structure and Formatting
     “It is hard for less experienced developers to appreciate how rarely architecting for future requirements/applications turns out net-positive.”<br>
     — John Carmack
   </blockquote>
+  
   <p><strong>Now is better than never.</strong></p>
 
   ```
@@ -581,6 +635,7 @@ Structure and Formatting
     Implement and test your solutions as you have them.
     Errors may lead to more promising solutions if you know about them.
   ```
+
   <p><strong>Although never is often better than <i>right</i> now.</strong></p>
 
   ```
@@ -592,6 +647,8 @@ Structure and Formatting
 </details>
 
 
+<!---------------------------------------------------------------------->
+
 
 <!-- IF THE IMPLEMENTATION IS HARD TO EXPLAIN, IT'S A BAD IDEA
      IF THE IMPLEMENTATION IS EASY TO EXPLAIN, IT MAY BE A GOOD IDEA -->
@@ -599,6 +656,7 @@ Structure and Formatting
   <summary>If the implementation is hard to explain, it's a bad idea<br />
     &emsp;If the implementation is easy to explain, it may be a good idea</summary>
   <br>
+
   <p><strong>If the implementation is hard to explain, it's a bad idea.</strong></p>
 
   ```python
@@ -611,6 +669,7 @@ Structure and Formatting
           if node.childNodes[0].nodeValue== 'Cisco' and node.tagName == 'cat':
               return node
   ```
+
   <p><strong>If the implementation is easy to explain, it may be a good idea.</strong></p>
 
   ```python
@@ -625,6 +684,8 @@ Structure and Formatting
   <br>
 </details>
 
+
+<!---------------------------------------------------------------------->
 
 
 <!-- NAMESPACES ARE ONE HONKING GREAT IDEA -- LET'S DO MORE OF THOSE -->
@@ -650,66 +711,74 @@ Structure and Formatting
 
 
 ### Sources
-https://github.com/hblanks/zen-of-python-by-example
-<br />
-Author:	Hunter Blanks
-<br />
-Date:	June 15, 2013
-<br /><br />
-https://bond-kirill-alexandrovich.medium.com/python-zen-in-practice-70dc8d7c4603
-<br />
-Author: Kirill Bondarenko
-<br />
-Date: Oct 14, 2020
-<br /><br />
-https://towardsdatascience.com/the-zen-of-python-a-guide-to-pythons-design-principles-93f3f76d088a
-<br />
-Author: Vishal Sharma
-<br />
-Date: Jun 3, 2020
-<br /><br />
+[Zen of Python by Example](https://github.com/hblanks/zen-of-python-by-example) - Hunter Blanks - June 15, 2013
+<br>
+[Python Zen in Practice](https://bond-kirill-alexandrovich.medium.com/python-zen-in-practice-70dc8d7c4603) - Kirill Bondarenko - October 14, 2020
+<br>
+[A Guide to Python's Design Principles](https://towardsdatascience.com/the-zen-of-python-a-guide-to-pythons-design-principles-93f3f76d088a) - Vishal Sharma - June 3, 2020
+<br>
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+
+<!--##################################################################-->
 ---
+<!--##################################################################-->
+
 
 
 <!-- BEST PRACTICES -->
-<br />
+<br>
 
 ## Best Practices
 
-<div class="section" id="explicit-code">
-<h3>> Explicit code<a class="headerlink" href="#explicit-code" title="Permalink to this headline">¶</a></h3>
-<p>While any kind of black magic is possible with Python, the
-most explicit and straightforward manner is preferred.</p>
-<p><strong>Bad</strong></p>
+<!-- EXPLICIT CODE -->
+<details>
+  <summary><font size="3">Explicit code</font></summary>
+  <br>
+  <div class="section" id="explicit-code">
+
+  <p>While any kind of black magic is possible with Python, the
+  most explicit and straightforward manner is preferred.</p>
+
+  <p><strong>Bad</strong></p>
 
   ```python
   def make_complex(*args):
       x, y = args
       return dict(**locals())
   ```
-<p><strong>Good</strong></p>
+
+  <p><strong>Good</strong></p>
 
   ```python
   def make_complex(x, y):
       return {'x': x, 'y': y}
   ```
-<p>In the good code above, x and y are explicitly received from
-the caller, and an explicit dictionary is returned. The developer
-using this function knows exactly what to do by reading the
-first and last lines, which is not the case with the bad example.</p>
-</div>
 
-<br />
+  <p>In the good code above, x and y are explicitly received from
+  the caller, and an explicit dictionary is returned. The developer
+  using this function knows exactly what to do by reading the
+  first and last lines, which is not the case with the bad example.</p>
+  </div>
+  <br>
+</details>
 
-<div class="section" id="one-statement-per-line">
-<h3>> One statement per line<a class="headerlink" href="#one-statement-per-line" title="Permalink to this headline">¶</a></h3>
-<p>While some compound statements such as list comprehensions are
-allowed and appreciated for their brevity and their expressiveness,
-it is bad practice to have two disjointed statements on the same line of code.</p>
-<p><strong>Bad</strong></p>
+
+<!---------------------------------------------------------------------->
+
+
+<!-- ONE STATEMENT PER LINE -->
+<details>
+  <summary><font size="3">One statement per line</font></summary>
+  <br>
+  <div class="section" id="one-statement-per-line">
+  <p>While some compound statements such as list comprehensions are
+  allowed and appreciated for their brevity and their expressiveness,
+  it is bad practice to have two disjointed statements on the same line of code.</p>
+  
+  <p><strong>Bad</strong></p>
 
   ```python
   print('one'); print('two')
@@ -719,7 +788,8 @@ it is bad practice to have two disjointed statements on the same line of code.</
   if <complex comparison> and <other complex comparison>:
       # do something
   ```
-<p><strong>Good</strong></p>
+
+  <p><strong>Good</strong></p>
 
   ```python
   print('one')
@@ -733,115 +803,90 @@ it is bad practice to have two disjointed statements on the same line of code.</
   if cond1 and cond2:
       # do something
   ```
-</div>
+  </div>
+  <br>
+</details>
 
-<br />
 
-<div class="section" id="function-arguments">
-<h3>> Function arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline">¶</a></h3>
-<p>Arguments can be passed to functions in four different ways.</p>
-<ol class="arabic simple">
-<li><strong>Positional arguments</strong> are mandatory and have no default values. They are
-the simplest form of arguments and they can be used for the few function
-arguments that are fully part of the function’s meaning and their order is
-natural. For instance, in <code class="docutils literal notranslate"><span class="pre">send(message,</span> <span class="pre">recipient)</span></code> or <code class="docutils literal notranslate"><span class="pre">point(x,</span> <span class="pre">y)</span></code>
-the user of the function has no difficulty remembering that those two
-functions require two arguments, and in which order.</li>
-</ol>
-<p>In those two cases, it is possible to use argument names when calling the
-functions and, doing so, it is possible to switch the order of arguments,
-calling for instance <code class="docutils literal notranslate"><span class="pre">send(recipient='World',</span> <span class="pre">message='Hello')</span></code> and
-<code class="docutils literal notranslate"><span class="pre">point(y=2,</span> <span class="pre">x=1)</span></code> but this reduces readability and is unnecessarily verbose,
-compared to the more straightforward calls to <code class="docutils literal notranslate"><span class="pre">send('Hello',</span> <span class="pre">'World')</span></code> and
-<code class="docutils literal notranslate"><span class="pre">point(1,</span> <span class="pre">2)</span></code>.</p>
-<ol class="arabic simple" start="2">
-<li><strong>Keyword arguments</strong> are not mandatory and have default values. They are
-often used for optional parameters sent to the function. When a function has
-more than two or three positional parameters, its signature is more difficult
-to remember and using keyword arguments with default values is helpful. For
-instance, a more complete <code class="docutils literal notranslate"><span class="pre">send</span></code> function could be defined as
-<code class="docutils literal notranslate"><span class="pre">send(message,</span> <span class="pre">to,</span> <span class="pre">cc=None,</span> <span class="pre">bcc=None)</span></code>. Here <code class="docutils literal notranslate"><span class="pre">cc</span></code> and <code class="docutils literal notranslate"><span class="pre">bcc</span></code> are
-optional, and evaluate to <code class="docutils literal notranslate"><span class="pre">None</span></code> when they are not passed another value.</li>
-</ol>
-<p>Calling a function with keyword arguments can be done in multiple ways in
-Python; for example, it is possible to follow the order of arguments in the
-definition without explicitly naming the arguments, like in
-<code class="docutils literal notranslate"><span class="pre">send('Hello',</span> <span class="pre">'World',</span> <span class="pre">'Cthulhu',</span> <span class="pre">'God')</span></code>, sending a blind carbon copy to
-God. It would also be possible to name arguments in another order, like in
-<code class="docutils literal notranslate"><span class="pre">send('Hello</span> <span class="pre">again',</span> <span class="pre">'World',</span> <span class="pre">bcc='God',</span> <span class="pre">cc='Cthulhu')</span></code>. Those two
-possibilities are better avoided without any strong reason to not follow the
-syntax that is the closest to the function definition:
-<code class="docutils literal notranslate"><span class="pre">send('Hello',</span> <span class="pre">'World',</span> <span class="pre">cc='Cthulhu',</span> <span class="pre">bcc='God')</span></code>.</p>
-<p>As a side note, following the <a class="reference external" href="http://en.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a>
-principle, it is often harder to remove an optional argument (and its logic
-inside the function) that was added “just in case” and is seemingly never used,
-than to add a new optional argument and its logic when needed.</p>
-<ol class="arabic simple" start="3">
-<li>The <strong>arbitrary argument list</strong> is the third way to pass arguments to a
-function. If the function intention is better expressed by a signature with
-an extensible number of positional arguments, it can be defined with the
-<code class="docutils literal notranslate"><span class="pre">*args</span></code> constructs. In the function body, <code class="docutils literal notranslate"><span class="pre">args</span></code> will be a tuple of all
-the remaining positional arguments. For example, <code class="docutils literal notranslate"><span class="pre">send(message,</span> <span class="pre">*args)</span></code>
-can be called with each recipient as an argument: <code class="docutils literal notranslate"><span class="pre">send('Hello',</span> <span class="pre">'God',</span>
-<span class="pre">'Mom',</span> <span class="pre">'Cthulhu')</span></code>, and in the function body <code class="docutils literal notranslate"><span class="pre">args</span></code> will be equal to
-<code class="docutils literal notranslate"><span class="pre">('God',</span> <span class="pre">'Mom',</span> <span class="pre">'Cthulhu')</span></code>.</li>
-</ol>
-<p>However, this construct has some drawbacks and should be used with caution. If a
-function receives a list of arguments of the same nature, it is often more
-clear to define it as a function of one argument, that argument being a list or
-any sequence. Here, if <code class="docutils literal notranslate"><span class="pre">send</span></code> has multiple recipients, it is better to define
-it explicitly: <code class="docutils literal notranslate"><span class="pre">send(message,</span> <span class="pre">recipients)</span></code> and call it with <code class="docutils literal notranslate"><span class="pre">send('Hello',</span>
-<span class="pre">['God',</span> <span class="pre">'Mom',</span> <span class="pre">'Cthulhu'])</span></code>. This way, the user of the function can manipulate
-the recipient list as a list beforehand, and it opens the possibility to pass
-any sequence, including iterators, that cannot be unpacked as other sequences.</p>
-<ol class="arabic simple" start="4">
-<li>The <strong>arbitrary keyword argument dictionary</strong> is the last way to pass
-arguments to functions. If the function requires an undetermined series of
-named arguments, it is possible to use the <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> construct. In the
-function body, <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> will be a dictionary of all the passed named
-arguments that have not been caught by other keyword arguments in the
-function signature.</li>
-</ol>
-<p>The same caution as in the case of <em>arbitrary argument list</em> is necessary, for
-similar reasons: these powerful techniques are to be used when there is a
-proven necessity to use them, and they should not be used if the simpler and
-clearer construct is sufficient to express the function’s intention.</p>
-<p>It is up to the programmer writing the function to determine which arguments
-are positional arguments and which are optional keyword arguments, and to
-decide whether to use the advanced techniques of arbitrary argument passing. If
-the advice above is followed wisely, it is possible and enjoyable to write
-Python functions that are:</p>
-<ul class="simple">
-<li>easy to read (the name and arguments need no explanations)</li>
-<li>easy to change (adding a new keyword argument does not break other parts of
-the code)</li>
-</ul>
-</div>
+<!---------------------------------------------------------------------->
 
-<br />
 
-<div class="section" id="returning-values">
-<h3>> Returning values<a class="headerlink" href="#returning-values" title="Permalink to this headline">¶</a></h3>
-<p>When a function grows in complexity, it is not uncommon to use multiple return
-statements inside the function’s body. However, in order to keep a clear intent
-and a sustainable readability level, it is preferable to avoid returning
-meaningful values from many output points in the body.</p>
-<p>There are two main cases for returning values in a function: the result of the
-function return when it has been processed normally, and the error cases that
-indicate a wrong input parameter or any other reason for the function to not be
-able to complete its computation or task.</p>
-<p>If you do not wish to raise exceptions for the second case, then returning a
-value, such as None or False, indicating that the function could not perform
-correctly might be needed. In this case, it is better to return as early as the
-incorrect context has been detected. It will help to flatten the structure of
-the function: all the code after the return-because-of-error statement can
-assume the condition is met to further compute the function’s main result.
-Having multiple such return statements is often necessary.</p>
-<p>However, when a function has multiple main exit points for its normal course,
-it becomes difficult to debug the returned result, so it may be preferable to
-keep a single exit point. This will also help factoring out some code paths,
-and the multiple exit points are a probable indication that such a refactoring
-is needed.</p>
+<!-- FUNCTION ARGUMENTS -->
+<details>
+  <summary><font size="3">Function arguments</font></summary>
+  <br>
+  <div class="section" id="function-arguments">
+
+  <p>Arguments can be passed to functions in four different ways.</p>
+  <p style="text-indent:-15px; padding-left:15px;">
+    1. <strong>Positional arguments</strong> are mandatory and have no default values. They are the simplest form of arguments and they can be used for the few function arguments that are fully part of the function’s meaning and their order is natural. For instance, in <code>send(message, recipient)</code> or <code>point(x, y)</code> the user of the function has no difficulty remembering that those two functions require two arguments, and in which order.
+  </p>
+  <p>In those two cases, it is possible to use argument names when calling the functions and, doing so, it is possible to switch the order of arguments, calling for instance <code>send(recipient='World', message='Hello')</code> and <code>point(y=2, x=1)</code> but this reduces readability and is unnecessarily verbose, compared to the more straightforward calls to <code>send('Hello', 'World')</code> and <code>point(1, 2)</code>.</p>
+  <br>
+
+  <p style="text-indent:-15px; padding-left:15px;">
+    2. <strong>Keyword arguments</strong> are not mandatory and have default values. They are often used for optional parameters sent to the function. When a function has more than two or three positional parameters, its signature is more difficult to remember and using keyword arguments with default values is helpful. For instance, a more complete <code>send</code> function could be defined as <code>send(message, to, cc=None, bcc=None)</code>. Here <code>cc</code> and <code>bcc</code> are optional, and evaluate to <code>None</code> when they are not passed another value.
+  </p>
+  <p>Calling a function with keyword arguments can be done in multiple ways in Python; for example, it is possible to follow the order of arguments in the
+  definition without explicitly naming the arguments, like in <code>send('Hello', 'World', 'Cthulhu', 'God')</code>, sending a blind carbon copy to God. It would also be possible to name arguments in another order, like in <code>send('Hello again', 'World', bcc='God', cc='Cthulhu')</code>. Those two possibilities are better avoided without any strong reason to not follow the syntax that is the closest to the function definition: <code>send('Hello', 'World', cc='Cthulhu', bcc='God')</code>.</p>
+  <p>As a side note, following the <a class="reference external" href="http://en.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a> principle, it is often harder to remove an optional argument (and its logic inside the function) that was added “just in case” and is seemingly never used, than to add a new optional argument and its logic when needed.</p>
+  <br>
+
+  <p style="text-indent:-15px; padding-left:15px;">
+    3. The <strong>arbitrary argument list</strong> is the third way to pass arguments to a function. If the function intention is better expressed by a signature with an extensible number of positional arguments, it can be defined with the <code>*args</code> constructs. In the function body, <code>args</code> will be a tuple of all the remaining positional arguments. For example, <code>send(message, *args)</code> can be called with each recipient as an argument:<code>send('Hello', 'God', 'Mom', 'Cthulhu')</code>, and in the function body <code>args</code> will be equal to <code>('God', 'Mom', 'Cthulhu')</code>.
+  </p>
+  <p>However, this construct has some drawbacks and should be used with caution. If a function receives a list of arguments of the same nature, it is often more clear to define it as a function of one argument, that argument being a list or any sequence. Here, if <code>send</code> has multiple recipients, it is better to define it explicitly: <code>send(message, recipients)</code> and call it with <code>send('Hello', ['God', 'Mom', 'Cthulhu'])</code>. This way, the user of the function can manipulate the recipient list as a list beforehand, and it opens the possibility to pass any sequence, including iterators, that cannot be unpacked as other sequences.</p>
+  <br>
+
+  <p style="text-indent:-15px; padding-left:15px;">
+    4. The <strong>arbitrary keyword argument dictionary</strong> is the last way to pass arguments to functions. If the function requires an undetermined series of named arguments, it is possible to use the <code>**kwargs</code> construct. In the function body, <code>kwargs</code> will be a dictionary of all the passed named arguments that have not been caught by other keyword arguments in the function signature.
+  </p>
+  <p>The same caution as in the case of <em>arbitrary argument list</em> is necessary, for similar reasons: these powerful techniques are to be used when there is a proven necessity to use them, and they should not be used if the simpler and clearer construct is sufficient to express the function’s intention.</p>
+  <p>It is up to the programmer writing the function to determine which arguments are positional arguments and which are optional keyword arguments, and to
+  decide whether to use the advanced techniques of arbitrary argument passing. If the advice above is followed wisely, it is possible and enjoyable to write Python functions that are:</p>
+  <p style="text-indent:-2px; padding-left:15px; line-height:15px">
+    &bull; easy to read (the name and arguments need no explanations)
+  </p>
+  <p style="text-indent:-2px; padding-left:15px; line-height:15px">
+    &bull; easy to change (adding a new keyword argument does not break other parts of the code)
+  </p>
+  </div>
+  <br>
+</details>
+
+
+<!---------------------------------------------------------------------->
+
+
+<!-- RETURNING VALUES -->
+<details>
+  <summary><font size="3">Returning values</font></summary>
+  <br>
+  <div class="section" id="returning-values">
+
+  <p>When a function grows in complexity, it is not uncommon to use multiple return
+  statements inside the function’s body. However, in order to keep a clear intent
+  and a sustainable readability level, it is preferable to avoid returning
+  meaningful values from many output points in the body.</p>
+
+  <p>There are two main cases for returning values in a function: the result of the
+  function return when it has been processed normally, and the error cases that
+  indicate a wrong input parameter or any other reason for the function to not be
+  able to complete its computation or task.</p>
+
+  <p>If you do not wish to raise exceptions for the second case, then returning a
+  value, such as None or False, indicating that the function could not perform
+  correctly might be needed. In this case, it is better to return as early as the
+  incorrect context has been detected. It will help to flatten the structure of
+  the function: all the code after the return-because-of-error statement can
+  assume the condition is met to further compute the function’s main result.
+  Having multiple such return statements is often necessary.</p>
+
+  <p>However, when a function has multiple main exit points for its normal course,
+  it becomes difficult to debug the returned result, so it may be preferable to
+  keep a single exit point. This will also help factoring out some code paths,
+  and the multiple exit points are a probable indication that such a refactoring
+  is needed.</p>
 
   ```python
   def complex_function(a, b, c):
@@ -856,17 +901,22 @@ is needed.</p>
       return x  # One single exit point for the returned value x will help
                 # when maintaining the code.
   ```
-</div>
+  </div>
+</details>
+<br>
 
-<br />
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+
+<!--##################################################################-->
 ---
+<!--##################################################################-->
+
 
 
 <!-- IDIOMATIC PYTHON -->
-<br />
+<br>
 
 ## Idiomatic Python
 ### Writing Pythonic code
@@ -1028,7 +1078,11 @@ speed.</p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+
+<!--##################################################################-->
 ---
+<!--##################################################################-->
+
 
 
 <!-- CONVENTIONS -->
@@ -1312,7 +1366,11 @@ readability.</p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+
+<!--##################################################################-->
 ---
+<!--##################################################################-->
+
 
 
 <!-- PEP 8 -->
@@ -1320,6 +1378,11 @@ readability.</p>
 
 ### Personal preference deviations
 
+
+
+<!--##################################################################-->
+---
+<!--##################################################################-->
 
 
 
@@ -1338,87 +1401,9 @@ readability.</p>
 
 
 
-
-
-
-
-
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This 
-
-### Prerequisites
-
-This
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-    - [ ] Nested Feature
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<!--##################################################################-->
+---
+<!--##################################################################-->
 
 
 
@@ -1435,8 +1420,3 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
