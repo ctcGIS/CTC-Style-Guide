@@ -56,7 +56,7 @@
       </ul>
     </li>
     <li>
-      <a href="#pep-8">PEP 8</a>
+      <a href="#pep-8-standards">PEP 8 Standards</a>
       <ul>
         <li><a href="#personal-preference-deviations">Personal preference deviations</a></li>
       </ul>
@@ -101,7 +101,7 @@ Conventions
     Modifying the values in a list
   Read From a File
   Line Continuations
-PEP 8
+PEP 8 Standards
   Personal preference deviations
 Structure and Formatting
   Code Map
@@ -1373,8 +1373,8 @@ readability.</p>
 
 
 
-<!-- PEP 8 -->
-## PEP 8
+<!-- PEP 8 STANDARDS -->
+## PEP 8 Standards
 
 ### Personal preference deviations
 
