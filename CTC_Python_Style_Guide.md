@@ -28,7 +28,7 @@
   <ol>
     <li><a href="#zen-of-python">Zen of Python</a></li>
     <li>
-      <a href="#best-practices">Best Practices</a>
+      <a href="#pythonic-best-practices">Pythonic Best Practices</a>
       <ul>
         <li><a href="#explicit-code">Explicit code</a></li>
         <li><a href="#one-statement-per-line">One statement per line</a></li>
@@ -74,7 +74,7 @@
 
 <!-- TABLE OF CONTENTS
 Zen of Python
-Best Practices
+Pythonic Best Practices
   Explicit code
   One statement per line
   Function arguments
@@ -728,10 +728,10 @@ Structure and Formatting
 
 
 
-<!-- BEST PRACTICES -->
+<!-- PYTHONIC BEST PRACTICES -->
 <br>
 
-## Best Practices
+## Pythonic Best Practices
 
 <!-- EXPLICIT CODE -->
 <details>
